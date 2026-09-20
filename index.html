@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f1e7">
+  <title>AquaCat Portrait Booth</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="./index.html" aria-label="AquaCat Portrait Booth home">AQUACAT <span>PORTRAIT BOOTH</span></a>
+    <p class="header-note">The crew keeps a proper photograph.</p>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="kicker">DEEP-END IDENTITY PORTRAITS</p>
+      <h1 id="page-title">One diver.<br>Nine alibis.</h1>
+      <p class="lede">AquaCat has the same brass collar, a different suit for every story, and an explanation for every situation.</p>
+    </section>
+
+    <section class="workshop" aria-label="AquaCat portrait workshop">
+      <div class="preview-area">
+        <div class="portrait-frame" id="portraitFrame">
+          <img id="basePortrait" src="assets/site-b1493736-1.webp" width="1024" height="1024" alt="Official portrait of AquaCat, an orange tabby in a vintage diving helmet" draggable="false" hidden>
+          <div class="expression-window" id="expressionWindow" aria-hidden="false">
+            <img id="expressionSheet" src="assets/site-b1493736-2.webp" width="1536" height="1024" alt="Official AquaCat portrait expression sheet" draggable="false">
+          </div>
+          <div class="scene-window" id="sceneWindow" hidden aria-hidden="true">
+            <img id="sceneSheet" src="assets/site-46e448b8-1.webp" width="1536" height="1024" alt="" draggable="false">
+          </div>
+          <div class="name-patch" aria-live="polite"><span id="patchName">AquaCat</span></div>
+          <div class="field-mark" aria-hidden="true">ACAT<br>FIELD FILE</div>
+        </div>
+        <div class="portrait-caption" aria-live="polite"><span class="status-dot"></span><span id="portraitName">OFFICIAL PORTRAIT: CALM AND UNDISCLOSED</span></div>
+      </div>
+
+      <div class="controls" id="controls">
+        <div class="control-heading">
+          <span>01-05</span>
+          <h2>Build an alibi</h2>
+        </div>
+
+        <fieldset class="choice-group">
+          <legend><span>01</span> Portrait record</legend>
+          <div class="mode-row" role="group" aria-label="Choose portrait type">
+            <button type="button" class="mode active" data-mode="official" aria-pressed="true">Official portrait</button>
+            <button type="button" class="mode" data-mode="scene" aria-pressed="false">Alibi scene</button>
+          </div>
+          <p class="input-note" id="modeNote">The original crew portrait. No further questions were asked.</p>
+        </fieldset>
+
+        <fieldset class="choice-group">
+          <legend><span>02</span> Crew name</legend>
+          <label class="visually-hidden" for="crewName">Name this AquaCat</label>
+          <input class="name-input" id="crewName" name="crewName" maxlength="22" value="AquaCat" autocomplete="off">
+          <p class="input-note">Stitched onto the suit for the logbook, not a legal statement.</p>
+        </fieldset>
+
+        <fieldset class="choice-group expression-control">
+          <legend><span>03</span> Official expression</legend>
+          <p class="group-note">A full range of reasonable responses to being photographed in a diving helmet.</p>
+          <div class="choice-row" role="group" aria-label="Choose AquaCat expression">
+            <button type="button" class="choice active" data-expression="calm" aria-pressed="true">Calm and undisclosed</button>
+            <button type="button" class="choice" data-expression="suspicious" aria-pressed="false">Mildly suspicious</button>
+            <button type="button" class="choice" data-expression="proud" aria-pressed="false">Proud of something</button>
+            <button type="button" class="choice" data-expression="alarmed" aria-pressed="false">Heard the word bath</button>
+            <button type="button" class="choice" data-expression="focused" aria-pressed="false">Fish-focused</button>
+            <button type="button" class="choice" data-expression="stern" aria-pressed="false">On watch</button>
+            <button type="button" class="choice" data-expression="sleepy" aria-pressed="false">Off-duty</button>
+            <button type="button" class="choice" data-expression="judging" aria-pressed="false">Quietly judging</button>
+            <button type="button" class="choice" data-expression="innocent" aria-pressed="false">Entirely innocent</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="choice-group scene-control">
+          <legend><span>04</span> Seen doing</legend>
+          <p class="group-note">These are photographs, not dropdown excuses.</p>
+          <div class="choice-row" role="group" aria-label="Choose AquaCat action">
+            <button type="button" class="choice active" data-action="porthole" aria-pressed="true">Inspecting porthole</button>
+            <button type="button" class="choice" data-action="key" aria-pressed="false">Guarding key</button>
+            <button type="button" class="choice" data-action="tally" aria-pressed="false">Tallying fish</button>
+            <button type="button" class="choice" data-action="bath" aria-pressed="false">Avoiding bath</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="choice-group scene-control">
+          <legend><span>05</span> Canvas suit</legend>
+          <p class="group-note">A real tailored drysuit, not a color wash.</p>
+          <div class="dye-row" role="group" aria-label="Choose canvas suit color">
+            <button type="button" class="dye active" data-dye="sea-green" aria-pressed="true"><span class="dye-chip sea-green"></span>Sea green</button>
+            <button type="button" class="dye" data-dye="rust" aria-pressed="false"><span class="dye-chip rust"></span>Weathered rust</button>
+            <button type="button" class="dye" data-dye="navy" aria-pressed="false"><span class="dye-chip navy"></span>Deep navy</button>
+            <button type="button" class="dye" data-dye="ochre" aria-pressed="false"><span class="dye-chip ochre"></span>Ochre</button>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="button button-secondary" id="randomizeButton">Open a sealed envelope</button>
+          <button type="button" class="button button-primary" id="issueButton">Issue crew ID <span aria-hidden="true">↓</span></button>
+        </div>
+        <button type="button" class="reset-button" id="resetButton">Return to official portrait</button>
+      </div>
+    </section>
+
+    <section class="issued-file" id="issuedFile" hidden aria-live="polite">
+      <div class="issued-stamp">ISSUED</div>
+      <p class="kicker">AQUACAT EXPEDITION RECORD</p>
+      <h2 id="issuedName">AquaCat</h2>
+      <p id="issuedAction">Official portrait remains on file.</p>
+      <button type="button" class="file-download" id="downloadButton">Download this case file <span aria-hidden="true">↓</span></button>
+    </section>
+
+    <section class="closing" aria-label="AquaCat community note">
+      <p>He did not sign up for a crew portrait. He simply appeared in all of them.</p>
+      <span>MAKE IT YOURS. KEEP IT WEIRD.</span>
+    </section>
+  </main>
+
+  <canvas id="downloadCanvas" width="1200" height="1440" hidden></canvas>
+  <script src="./config.js" defer></script>
+  <script src="./env.js" defer></script>
+  <script src="./script.js" defer></script>
+</body>
+</html>
